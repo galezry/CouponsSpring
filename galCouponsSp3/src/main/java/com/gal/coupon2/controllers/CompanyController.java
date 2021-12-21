@@ -2,6 +2,7 @@ package com.gal.coupon2.controllers;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +30,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("company") // http://localhost:8080/company
 @RequiredArgsConstructor
 //@CrossOrigin(value = "http://localhost:4200")
+@CrossOrigin(value = "https://gal-coupons.herokuapp.com")
 public class CompanyController {
 
 	private final AdminService adminService; // used for updateCompany method
