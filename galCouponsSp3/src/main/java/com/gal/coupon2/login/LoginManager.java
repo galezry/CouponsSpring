@@ -47,7 +47,7 @@ public class LoginManager {
 
 			}
 		}
-		throw new CouponSysSecurityException("The sign in information you entered does not match our records."
-				+ " Please re-enter your sign in information or create an account");
+		throw new CouponSysSecurityException(
+				"The sign in information is incorrect." + " Please try again or create an account");
 	}
 }

@@ -179,22 +179,62 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 					.description("Dr. Pepper").startDate(Date.valueOf(LocalDate.now()))
 					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(5.99)
 					.image("http://image.com").build();
+			Coupon co15 = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
+					.title("Coca-Cola Clock")
+					.description("Bring a classic diner look to your kitchen or dining room with this Coca-Cola"
+							+ " Chrome-Finish Clock. This 12-inch clock features the Coca-Cola logo in bright"
+							+ " white on a red backdrop with a high-gloss chrome molded case"
+							+ " for a timeless contrast.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(20)))
+					.amount(50).price(15.99).image("http://image.com").build();
+			Coupon co16 = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
+					.title("Coca-Cola Pranzo Lunch Tote")
+					.description("The Coca-Cola Pranzo is an insulated lunch box that features isolated"
+							+ " sections so you can separate your hot and cold food and drink items. "
+							+ "Made of polyester with a storage capacity of 200 square inches, the Pranzo"
+							+ " also features a hidden flatware section.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(20)))
+					.amount(50).price(59.95).image("http://image.com").build();
+
 			addCouponIfNotExisted(co1);
 			addCouponIfNotExisted(co2);
 			addCouponIfNotExisted(co6);
 			addCouponIfNotExisted(co12);
+			addCouponIfNotExisted(co15);
+			addCouponIfNotExisted(co16);
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("walmart@gmail.com")) {
 			Coupon fries = Coupon.builder().companyId(companyId).categoryId(Category.FOOD).title("Frozen Fries")
 					.description("30% off").startDate(Date.valueOf(LocalDate.now()))
 					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(3.49)
 					.image("http://image.com").build();
-			Coupon heater = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY).title("Heater")
-					.description("30% off").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(29.99)
-					.image("http://image.com").build();
+			Coupon heater = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
+					.title("Portable Electric Heater")
+					.description("2021 Portable Electric Space Heater, fast heating for home & office. "
+							+ "The advanced PTC ceramic heating element allows the heater to heat quickly. "
+							+ "Provides temperature protection, power failure, and other technologies,"
+							+ " making it more safe and reliable.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(15)))
+					.amount(40).price(34.88).image("http://image.com").build();
+			Coupon printerpix = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
+					.title("Printerpix")
+					.description("Personalized Heat Activated Magic Coffee Mug, Custom Image, 11oz. 80% Off! "
+							+ "Design your personalized magic mug with text, logo, or photo; color-changing"
+							+ " coffee mug reveals your chosen photo when the contents are warm.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(6)))
+					.amount(100).price(4.99).image("http://image.com").build();
+			Coupon watch = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
+					.title("P25 Smart Watch")
+					.description("P25 Smart Watch Fitness Tracker Pedometer IP68 Waterproof Sport Watch "
+							+ "for Android and iOS Phones. 1.7inch Full Touch HD Display, 8 sports modes: "
+							+ "Walking, Running, Cycling, Swimming, and more. Sleep Tracker, Friendly-skin "
+							+ "silicon protect case.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(10)))
+					.amount(60).price(22.99).image("http://image.com").build();
 			addCouponIfNotExisted(fries);
 			addCouponIfNotExisted(heater);
+			addCouponIfNotExisted(printerpix);
+			addCouponIfNotExisted(watch);
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("netflix@gmail.com")) {
 			Coupon co4 = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT).title("20% Off")
@@ -243,6 +283,15 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 			addCouponIfNotExisted(co9);
 			addCouponIfNotExisted(co10);
 			addCouponIfNotExisted(co14);
+		}
+		if (getCompanyDetails().getEmail().equalsIgnoreCase("pepsi@gmail.com")) {
+			Coupon coup = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("Pepsi Can Koozies")
+					.description("12 oz Can and Bottle Holders. Neoprene foam hat provides good"
+							+ " thermal and moisture insulation. It is resistant to ozone, sunlight,"
+							+ " and oxidation. Most importantly Keep  drinks Cool.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(15)))
+					.amount(100).price(5.99).image("http://image.com").build();
+			addCouponIfNotExisted(coup);
 		}
 
 	}
