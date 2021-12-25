@@ -237,27 +237,42 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 			addCouponIfNotExisted(watch);
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("netflix@gmail.com")) {
-			Coupon co4 = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT).title("20% Off")
-					.description("holiday sale").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(1.49)
-					.image("http://image.com").build();
-			Coupon co13 = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
-					.title("1 months pass").description("promo").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(7.99)
-					.image("http://image.com").build();
+			Coupon co4 = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
+					.title("Holiday Sale - 20% Off")
+					.description("Get 20% off any monthly plan using this coupon. Limited time offer")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(1)))
+					.amount(100).price(1.49).image("http://image.com").build();
+			Coupon co13 = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT).title("1 month pass")
+					.description("New subscriber? Get one free month when joining any plan for at least one year")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(20)))
+					.amount(50).price(7.99).image("http://image.com").build();
+			Coupon co17 = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
+					.title("Up to 20% off any plan").description("Get up to 20% off on any plan using this coupon")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(20)))
+					.amount(50).price(1.89).image("http://image.com").build();
+
 			addCouponIfNotExisted(co4);
 			addCouponIfNotExisted(co13);
+			addCouponIfNotExisted(co17);
+
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("cvs@gmail.com")) {
-			Coupon co5 = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH).title("Hand Cream")
-					.description("50% off").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(1.99)
-					.image("http://image.com").build();
-			Coupon co7 = Coupon.builder().companyId(companyId).categoryId(Category.FOOD).title("Cough drops")
-					.description("35% off").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(19.99)
-					.image("http://image.com").build();
-			addCouponIfNotExisted(co5);
+			Coupon co5 = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH).title("Hand Cream (3 Pack)")
+					.description(
+							"CVS Healthy Hands Hand & Nail Care Lotion 3.25 Fl Oz (3 Pack). CVS Health Healthy Hands Hand & Nail Care Lotion is designed with essential ingredients like alpha hydroxy, keratin and vitamin E that are specific to your total hand and nail needs. It strengthens nails, softens cuticles and immediately hydrates the skin for instant relief.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(1)))
+					.amount(100).price(1.99).image("http://image.com").build();
+			Coupon co7 = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH).title("Halls Cough drops")
+					.description("Special offer - Hall’s Cough Drops 25-30 ct - "
+							+ "free with this coupon  (regularly $2.79)!")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(20)))
+					.amount(100).price(2.09).image("http://image.com").build();
+			try {
+				addCouponIfNotExisted(co5);
+			} catch (Exception e) {
+				throw new CouponSystemException("too mant characters");
+			}
+
 			addCouponIfNotExisted(co7);
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("target@gmail.com")) {
