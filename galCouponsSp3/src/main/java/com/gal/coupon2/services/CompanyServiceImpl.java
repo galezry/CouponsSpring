@@ -259,7 +259,7 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("cvs@gmail.com")) {
 			Coupon co5 = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH).title("Hand Cream (3 Pack)")
 					.description(
-							"CVS Healthy Hands Hand & Nail Care Lotion 3.25 Fl Oz (3 Pack). Designed with essential ingredients like alpha hydroxy, keratin and vitamin E that are specific to your total hand and nail needs. It strengthens nails, softens cuticles and immediately hydrate")
+							"CVS Healthy Hands Hand & Nail Care Lotion 3.25 Fl Oz (3 Pack). Designed with essential ingredients like alpha hydroxy, keratin and vitamin E that are specific to your total hand and nail needs. It strengthens nails, softens cuticles and immediately hydrat")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(1)))
 					.amount(100).price(1.99).image("http://image.com").build();
 			Coupon co7 = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH).title("Halls Cough drops")
