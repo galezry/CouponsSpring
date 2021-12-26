@@ -163,22 +163,42 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 	@Override
 	public void restore() throws CouponSystemException {
 		if (getCompanyDetails().getName().equalsIgnoreCase("coca cola")) {
-			Coupon co1 = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("6 pack cans")
-					.description("$1 off").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(4.99)
-					.image("http://image.com").build();
+			Coupon co1 = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("6-Pack Vanilla Soda")
+					.description("Coca-Cola Vanilla Soda 6 cans / 7.5 fl oz. Enjoy this unique"
+							+ " Coca-Cola’s crisp, delicious taste with meals, on the go, or to "
+							+ "share. Serve ice cold for maximum refreshment. Perfect size for "
+							+ "drinking with meals, on the go, or any time.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(35)))
+					.amount(70).price(3.67).image("http://image.com").build();
 			Coupon co2 = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS)
-					.title("Coke Life - 64oz bottle").description("64oz for $1.79!")
+					.title("Coca-Cola Life - 20 fl oz")
+					.description("Nothing compares to the refreshing, crisp taste of Coca-Cola Life, "
+							+ "the delicious soda you know and love with a twist. Coca-Cola Life makes "
+							+ "life’s special moments a little bit better, with cane sugar and stevia "
+							+ "leaf extract.")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(1)))
-					.amount(100).price(1.79).image("http://image.com").build();
-			Coupon co6 = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY).title("Ice Machine")
-					.description("Vintage").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(19.99)
-					.image("http://image.com").build();
-			Coupon co12 = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("12 pack cans")
-					.description("Dr. Pepper").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(5.99)
-					.image("http://image.com").build();
+					.amount(100).price(1.88).image("http://image.com").build();
+			Coupon co6 = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY).title("Snow Cone Maker")
+					.description("Nostalgia SCM550COKE Coca-Cola Countertop Snow Cone Maker, "
+							+ "Makes 20 Icy Treats, White/Red. The stainless steel cutting blades "
+							+ "transform regular ice cubes into frozen treats that everybody loves. "
+							+ "Assembled Product Dimensions: 12.00 x 11.00 x 15.25 Inches.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(40)))
+					.amount(100).price(49.99).image("http://image.com").build();
+			Coupon co12 = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("12 Pack Cans")
+					.description("12 Fl Oz, 12 Pack Cans of Coca-Cola Original Taste. 34 mg of "
+							+ "caffeine in each 12 oz serving. This sparkling beverage is best "
+							+ "enjoyed ice-cold for maximum refreshment.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(40)))
+					.amount(100).price(5.92).image("http://image.com").build();
+			Coupon cherry = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS)
+					.title("12 Pack Cherry Coke Cans")
+					.description("Coca-Cola Cherry Soda Pop, 12 Fl Oz, 12 Pack Cans. A little flavor "
+							+ "can make a lot of magic happen and Coca-Cola Cherry is here to make your "
+							+ "taste buds happy. 34 mg of caffeine in each 12 oz serving. Best enjoyed "
+							+ "ice-cold for maximum refreshment.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(40)))
+					.amount(100).price(5.92).image("http://image.com").build();
 			Coupon co15 = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
 					.title("Coca-Cola Clock")
 					.description("Bring a classic diner look to your kitchen or dining room with this Coca-Cola"
@@ -188,26 +208,40 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(20)))
 					.amount(50).price(15.99).image("http://image.com").build();
 			Coupon co16 = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
-					.title("Coca-Cola Pranzo Lunch Tote")
+					.title("Pranzo Lunch Tote")
 					.description("The Coca-Cola Pranzo is an insulated lunch box that features isolated"
 							+ " sections so you can separate your hot and cold food and drink items. "
 							+ "Made of polyester with a storage capacity of 200 square inches, the Pranzo"
 							+ " also features a hidden flatware section.")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(20)))
 					.amount(50).price(59.95).image("http://image.com").build();
+			Coupon fridge = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
+					.title("Portable Fridge")
+					.description("Classic Coca-Cola 4 Liter, 6 Can Portable Fridge, Mini Cooler "
+							+ "for Food, Beverages, Skincare - Use at Home, Office, Dorm, Car, Boat "
+							+ "- AC & DC Plugs Included. Cold mode keeps items cool to 32F (18C) and "
+							+ "hot mode keeps items warm up to 135F (57C).")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(30)))
+					.amount(50).price(29.49).image("http://image.com").build();
 
 			addCouponIfNotExisted(co1);
 			addCouponIfNotExisted(co2);
 			addCouponIfNotExisted(co6);
 			addCouponIfNotExisted(co12);
+			addCouponIfNotExisted(cherry);
 			addCouponIfNotExisted(co15);
 			addCouponIfNotExisted(co16);
+			addCouponIfNotExisted(fridge);
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("walmart@gmail.com")) {
-			Coupon fries = Coupon.builder().companyId(companyId).categoryId(Category.FOOD).title("Frozen Fries")
-					.description("30% off").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(3.49)
-					.image("http://image.com").build();
+			Coupon fries = Coupon.builder().companyId(companyId).categoryId(Category.FOOD)
+					.title("Ore-Ida Fries - 32 oz")
+					.description("Ore-Ida Golden Crinkles French Fried Frozen Potatoes, 32 oz Bag. "
+							+ "Get this great brand of fries for this amazing price. Made from the "
+							+ "highest quality Grade A potatoes grown in the U.S.  Gluten free. "
+							+ "Free with this coupon on any Walmart in store purchase.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(40)))
+					.amount(100).price(3.12).image("http://image.com").build();
 			Coupon heater = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
 					.title("Portable Electric Heater")
 					.description("2021 Portable Electric Space Heater, fast heating for home & office. "
@@ -258,46 +292,80 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("cvs@gmail.com")) {
 			Coupon co5 = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH).title("Hand Cream (3 Pack)")
-					.description(
-							"CVS Healthy Hands Hand & Nail Care Lotion 3.25 Fl Oz (3 Pack). Designed with essential ingredients like alpha hydroxy, keratin and vitamin E that are specific to your total hand and nail needs. It strengthens nails, softens cuticles and immediately hydrat")
-					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(1)))
-					.amount(100).price(1.99).image("http://image.com").build();
+					.description("CVS Healthy Hands Hand & Nail Care Lotion 3.25 Fl Oz (3 Pack). "
+							+ "Designed with essential ingredients like alpha hydroxy, keratin and "
+							+ "vitamin E that are specific to your total hand and nail needs. "
+							+ "It strengthens nails, softens cuticles and hydrates the skin.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(40)))
+					.amount(60).price(7.93).image("http://image.com").build();
 			Coupon co7 = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH).title("Halls Cough drops")
-					.description("Special offer - Hall’s Cough Drops 25-30 ct - "
-							+ "free with this coupon  (regularly $2.79)!")
-					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(20)))
+					.description("Special offer - Hall’s Cough Drops 25-30 ct (regularly $2.79)!")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(35)))
 					.amount(100).price(2.09).image("http://image.com").build();
-			try {
-				addCouponIfNotExisted(co5);
-			} catch (Exception e) {
-				throw new CouponSystemException("too mant characters");
-			}
+			Coupon vaccine = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH)
+					.title("$5 off $20 purchase")
+					.description("Get any vaccine including Covid-19 vaccine or a flu shot and "
+							+ "get $5 off your purchase of $20 or more - In store offer. Go get "
+							+ "your vaccine today and enjoy this great offer!")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(35)))
+					.amount(150).price(0.1).image("http://image.com").build();
+			Coupon soda = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("3 12-pk soda cans")
+					.description("Get 3 (three) 12 pk, 12 fl oz Cans or 8 pk 12 fl oz Bottles: "
+							+ "Select Varieties with Additional $10 Purchase (Regularly $5.99 each)!")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(30)))
+					.amount(80).price(11).image("http://image.com").build();
 
+			addCouponIfNotExisted(co5);
 			addCouponIfNotExisted(co7);
+			addCouponIfNotExisted(vaccine);
+			addCouponIfNotExisted(soda);
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("target@gmail.com")) {
-			Coupon co8 = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("2LTR Soda")
-					.description("50% off").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(2))).amount(100).price(0.99)
-					.image("http://image.com").build();
+			Coupon co8 = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("2 Liters Soda")
+					.description("2 liter bottle. Pick from a variety of soda beverages: "
+							+ "Coca Cola, Dr Pepper, Sprite, Fanta, Pepsi, 7UP and more. "
+							+ "Enjoy your favorite drink with any meal. Perfect Pairing: "
+							+ "Pizza, tacos or salad, It is the perfect companion for your " + "next meal.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(35)))
+					.amount(100).price(1.49).image("http://image.com").build();
 
-			Coupon co9 = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY).title("Coffee Machine")
-					.description("philips").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(29.99)
-					.image("http://image.com").build();
+			Coupon co9 = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
+					.title("Keurig Coffee Maker")
+					.description("The Keurig K-Mini single serve coffee maker features a sleek design "
+							+ "with matte finish, and at less than 5 inches wide is the perfect size "
+							+ "for any space or occasion. Add fresh water, pop in your favorite K-Cup "
+							+ "pod, press the brew button and enjoy!")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(40)))
+					.amount(75).price(69.99).image("http://image.com").build();
 
-			Coupon co10 = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH).title("Advil Tablets")
-					.description("30 of 200mg").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(1))).amount(100).price(5.99)
-					.image("http://image.com").build();
-			Coupon co14 = Coupon.builder().companyId(companyId).categoryId(Category.FOOD).title("Lays Chips")
-					.description("10 oz").startDate(Date.valueOf(LocalDate.now()))
-					.endDate(Date.valueOf(LocalDate.now().plusWeeks(2))).amount(100).price(2.49)
-					.image("http://image.com").build();
+			Coupon co10 = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH)
+					.title("Advil Tablets - Ibuprofen (NSAID)")
+					.description("Pain Reliever/Fever Reducer - Ibuprofen (NSAID). 24 Tablets; "
+							+ "Active Ingredient Strength Value: 200 Milligrams; Age: 12 Years and Up; "
+							+ "Aspirin-Free, Contains Pain Reliever, Caffeine-Free. Primary Active "
+							+ "Ingredient: Ibuprofen; Warning: Contains ibuprofen.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(48)))
+					.amount(100).price(4.49).image("http://image.com").build();
+			Coupon co14 = Coupon.builder().companyId(companyId).categoryId(Category.FOOD).title("Lays Chips 8oz")
+					.description("Lay's Classic Potato Chips - 8oz. Farm-grown potatoes seasoned with "
+							+ "just the right amount of salt. Made with no artificial flavors, "
+							+ "no preservatives, and are Gluten Free. Only 3 Ingredients: Potatoes, "
+							+ "Vegetable Oil, and Salt.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(36)))
+					.amount(100).price(2.79).image("http://image.com").build();
+			Coupon dvd = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT).title("Wonder (DVD)")
+					.description("Enjoy a movie night at home with your loved one with this great "
+							+ "offer from Target. DVD Movie. A detective investigates the death of a "
+							+ "patriarch of an eccentric, combative family. Genre: Comedy / Crime/ Drama; "
+							+ "Rating: Pg-13; 130 minutes.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(36)))
+					.amount(75).price(4.99).image("http://image.com").build();
 			addCouponIfNotExisted(co8);
 			addCouponIfNotExisted(co9);
 			addCouponIfNotExisted(co10);
 			addCouponIfNotExisted(co14);
+			addCouponIfNotExisted(dvd);
+
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("pepsi@gmail.com")) {
 			Coupon coup = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("Pepsi Can Koozies")
