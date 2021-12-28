@@ -199,6 +199,7 @@ public class AdminServiceImpl extends ClientService implements AdminService {
 		Company c4 = Company.builder().name("CVS").email("cvs@gmail.com").password("1234ab!").build();
 		Company c5 = Company.builder().name("Target").email("target@gmail.com").password("1234ab!").build();
 		Company c6 = Company.builder().name("Pepsi").email("pepsi@gmail.com").password("1234ab!").build();
+		Company c7 = Company.builder().name("AMC").email("amc@gmail.com").password("1234ab!").build();
 
 		addCompanyIfNotExisted(c1);
 		addCompanyIfNotExisted(c2);
@@ -206,6 +207,7 @@ public class AdminServiceImpl extends ClientService implements AdminService {
 		addCompanyIfNotExisted(c4);
 		addCompanyIfNotExisted(c5);
 		addCompanyIfNotExisted(c6);
+		addCompanyIfNotExisted(c7);
 
 		Customer cu1 = Customer.builder().firstName("Dave").lastName("Smith").email("dave@gmail.com")
 				.password("1234ab@").build();

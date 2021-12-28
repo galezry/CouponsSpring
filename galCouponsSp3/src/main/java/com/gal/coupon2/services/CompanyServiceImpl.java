@@ -265,10 +265,27 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 							+ "silicon protect case.")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(10)))
 					.amount(60).price(22.99).image("http://image.com").build();
+			Coupon chocolate = Coupon.builder().companyId(companyId).categoryId(Category.FOOD)
+					.title("Mixed Chocolate Candy Bar")
+					.description("Minis Party Size - 135 Piece Bag. Featuring SNICKERS, TWIX, 3 MUSKETEERS, "
+							+ "MILKY WAY Original and MILKY WAY Midnight Candy, this 40-ounce bag of MARS "
+							+ "Chocolate Bars is a perfect way to always have a gift, surprise treat or "
+							+ "chocolate snack on hand.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(39)))
+					.amount(80).price(10.98).image("http://image.com").build();
+			Coupon mnm = Coupon.builder().companyId(companyId).categoryId(Category.FOOD).title("M&M's Family Size Bag")
+					.description("M&M'S Peanut Milk Chocolate Candy, 19.2-ounce bag - Family Size. Enjoy "
+							+ "this colorful candy made with real peanuts and milk chocolate and surrounded "
+							+ "by a candy shell. Peanut M&M'S Candy is a favorite movie candy to share with "
+							+ "family and friends.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(41)))
+					.amount(100).price(5.98).image("http://image.com").build();
 			addCouponIfNotExisted(fries);
 			addCouponIfNotExisted(heater);
 			addCouponIfNotExisted(printerpix);
 			addCouponIfNotExisted(watch);
+			addCouponIfNotExisted(chocolate);
+			addCouponIfNotExisted(mnm);
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("netflix@gmail.com")) {
 			Coupon co4 = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
@@ -276,12 +293,13 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 					.description("Get 20% off any monthly plan using this coupon. Limited time offer")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(1)))
 					.amount(100).price(1.49).image("http://image.com").build();
-			Coupon co13 = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT).title("1 month pass")
+			Coupon co13 = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
+					.title("One Month Pass")
 					.description("New subscriber? Get one free month when joining any plan for at least one year")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(20)))
 					.amount(50).price(7.99).image("http://image.com").build();
 			Coupon co17 = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
-					.title("Up to 20% off any plan").description("Get up to 20% off on any plan using this coupon")
+					.title("Up To 20% Off Any Plan").description("Get up to 20% off on any plan using this coupon.")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(20)))
 					.amount(50).price(1.89).image("http://image.com").build();
 
@@ -298,18 +316,18 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 							+ "It strengthens nails, softens cuticles and hydrates the skin.")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(40)))
 					.amount(60).price(7.93).image("http://image.com").build();
-			Coupon co7 = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH).title("Halls Cough drops")
+			Coupon co7 = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH).title("Halls Cough Drops")
 					.description("Special offer - Hall’s Cough Drops 25-30 ct (regularly $2.79)!")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(35)))
 					.amount(100).price(2.09).image("http://image.com").build();
 			Coupon vaccine = Coupon.builder().companyId(companyId).categoryId(Category.HEALTH)
-					.title("$5 off $20 purchase")
+					.title("$5 Off $20 Purchase")
 					.description("Get any vaccine including Covid-19 vaccine or a flu shot and "
 							+ "get $5 off your purchase of $20 or more - In store offer. Go get "
 							+ "your vaccine today and enjoy this great offer!")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(35)))
 					.amount(150).price(0.1).image("http://image.com").build();
-			Coupon soda = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("3 12-pk soda cans")
+			Coupon soda = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("3 12-pk Soda Cans")
 					.description("Get 3 (three) 12 pk, 12 fl oz Cans or 8 pk 12 fl oz Bottles: "
 							+ "Select Varieties with Additional $10 Purchase (Regularly $5.99 each)!")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(30)))
@@ -368,13 +386,86 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("pepsi@gmail.com")) {
-			Coupon coup = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS).title("Pepsi Can Koozies")
+			Coupon coup = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
+					.title("Pepsi Can Koozie")
 					.description("12 oz Can and Bottle Holders. Neoprene foam hat provides good"
 							+ " thermal and moisture insulation. It is resistant to ozone, sunlight,"
 							+ " and oxidation. Most importantly Keep  drinks Cool.")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(15)))
 					.amount(100).price(5.99).image("http://image.com").build();
+			Coupon koozie = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
+					.title("Collapsible Koozie")
+					.description("The Pepsi Collapsible KOOZIE® Can Kooler folds quickly so you can take "
+							+ "it anywhere! Materials: Polyester with Foam Backing. "
+							+ "Approx Size: 3-7/8″w x 5-1/4″h x 1/8″d.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(35)))
+					.amount(100).price(1.99).image("http://image.com").build();
+			Coupon fridge = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
+					.title("Portable 6-can Mini Fridge")
+					.description("Store snacks, beverages, and skin care products. Fits easily anywhere "
+							+ "- Your desk, bookshelf etc. Holds 6 cans or 4 liters. Dependable "
+							+ "thermoelectric cooling; quiet and vibration free. Plugs into a 12V "
+							+ "car adapter or home outlet, both cords are included.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(38)))
+					.amount(65).price(39.9).image("http://image.com").build();
+			Coupon bottles = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS)
+					.title("6 Pack Bottles, 16.9 Fl Oz")
+					.description("Pepsi Cola Soda Pop, 16.9 Fl Oz, 6 Pack Bottles. Formulated to be "
+							+ "refreshing and crisp. Enjoy the bold, refreshing, robust cola over "
+							+ "ice, or with a twist of lemon or lime. For a classic treat, try serving "
+							+ "with a scoop of vanilla ice cream!")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(33)))
+					.amount(100).price(3.88).image("http://image.com").build();
+			Coupon cans = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS)
+					.title("24 Pack Cans, 12 Fl Oz")
+					.description("Pepsi Cola Soda Pop, 12 Fl Oz, 24 Pack Cans. The bold, refreshing "
+							+ "cola born in New Bern, NC in 1898 and still bottled in the USA. Ideal "
+							+ "for parties, meals and celebrations. 150 calories per can. No fat, no "
+							+ "cholesterol and  low sodium. Recyclable cans.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(38)))
+					.amount(80).price(8.48).image("http://image.com").build();
+			Coupon mango = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS)
+					.title("6 Pack Mango Cola Soda, 16.9 Fl Oz")
+					.description("Pepsi Mango Cola Soda Pop, 16.9 Fl Oz, 6 Pack Bottles. Pepsi with a Splash "
+							+ "of Mango Juice with Other Natural Flavors. Enjoy this unique and tasty flavor "
+							+ "from Pepsi!")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(33)))
+					.amount(70).price(3.88).image("http://image.com").build();
+
 			addCouponIfNotExisted(coup);
+			addCouponIfNotExisted(koozie);
+			addCouponIfNotExisted(fridge);
+			addCouponIfNotExisted(bottles);
+			addCouponIfNotExisted(cans);
+			addCouponIfNotExisted(mango);
+		}
+		if (getCompanyDetails().getEmail().equalsIgnoreCase("amc@gmail.com")) {
+			Coupon mix = Coupon.builder().companyId(companyId).categoryId(Category.FOOD)
+					.title("The SING 2 All-Star Snack Pack")
+					.description("Enough for you and your own all-star cast! Available for a limited time, "
+							+ "the SING 2 All-Star Snack Pack contains a large popcorn, 2 candies, and 2 "
+							+ "large fountain or ICEE drinks.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(16)))
+					.amount(70).price(17.99).image("http://image.com").build();
+			Coupon cokePop = Coupon.builder().companyId(companyId).categoryId(Category.FOOD)
+					.title("Coke & Small Popcorn")
+					.description("Get cheap eats at the concession stand at AMC Theaters. "
+							+ "Use this coupon to get a $5 deal on a 20-ounce Coke and a "
+							+ "small popcorn at participating classic and dine-in locations. "
+							+ "Print the offer or show it on your smartphone.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(24)))
+					.amount(80).price(5).image("http://image.com").build();
+			Coupon silver = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
+					.title("Silver Experience Movie Ticket")
+					.description("Get to the movies on a discount! The tickets do not expire. "
+							+ "Use on movies at any date/time. Use on movies after 2 weekends of "
+							+ "release date. Good at any AMC in the US, excluding 3D, IMAX®, ETX, "
+							+ "alternative content, and premium services and locations.")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(100)))
+					.amount(100).price(7.97).image("http://image.com").build();
+			addCouponIfNotExisted(mix);
+			addCouponIfNotExisted(cokePop);
+			addCouponIfNotExisted(silver);
 		}
 
 	}
