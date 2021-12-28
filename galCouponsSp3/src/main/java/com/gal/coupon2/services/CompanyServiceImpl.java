@@ -431,13 +431,20 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 							+ "from Pepsi!")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(33)))
 					.amount(70).price(3.88).image("http://image.com").build();
-
+			Coupon zero = Coupon.builder().companyId(companyId).categoryId(Category.DRINKS)
+					.title("Zero Sugar 6 Pack Bottles")
+					.description("Pepsi Zero Sugar Cola Soda Pop, 16.9 Fl Oz, 6 Pack Bottles. Pepsi Zero "
+							+ "Sugar has arrived and it's exactly what it says it is: A bold and refreshing "
+							+ "zero calorie cola. Enjoy maximum Pepsi taste with zero sugar!")
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(33)))
+					.amount(70).price(3.88).image("http://image.com").build();
 			addCouponIfNotExisted(coup);
 			addCouponIfNotExisted(koozie);
 			addCouponIfNotExisted(fridge);
 			addCouponIfNotExisted(bottles);
 			addCouponIfNotExisted(cans);
 			addCouponIfNotExisted(mango);
+			addCouponIfNotExisted(zero);
 		}
 		if (getCompanyDetails().getEmail().equalsIgnoreCase("amc@gmail.com")) {
 			Coupon mix = Coupon.builder().companyId(companyId).categoryId(Category.FOOD)
