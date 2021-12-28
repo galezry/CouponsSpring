@@ -207,7 +207,7 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 							+ " for a timeless contrast.")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(20)))
 					.amount(50).price(15.99).image("http://image.com").build();
-			Coupon co16 = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
+			Coupon co16 = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
 					.title("Pranzo Lunch Tote")
 					.description("The Coca-Cola Pranzo is an insulated lunch box that features isolated"
 							+ " sections so you can separate your hot and cold food and drink items. "
