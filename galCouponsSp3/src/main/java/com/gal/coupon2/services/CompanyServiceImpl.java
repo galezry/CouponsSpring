@@ -371,13 +371,14 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 							+ "Vegetable Oil, and Salt.")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(36)))
 					.amount(100).price(2.79).image("http://image.com").build();
-			Coupon dvd = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT).title("Wonder (DVD)")
+			Coupon dvd = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
+					.title("Knives Out (DVD)")
 					.description("Enjoy a movie night at home with your loved one with this great "
 							+ "offer from Target. DVD Movie. A detective investigates the death of a "
 							+ "patriarch of an eccentric, combative family. Genre: Comedy / Crime/ Drama; "
 							+ "Rating: Pg-13; 130 minutes.")
-					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(36)))
-					.amount(75).price(4.99).image("http://image.com").build();
+					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(38)))
+					.amount(75).price(5.96).image("http://image.com").build();
 			addCouponIfNotExisted(co8);
 			addCouponIfNotExisted(co9);
 			addCouponIfNotExisted(co10);
@@ -395,9 +396,9 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 					.amount(100).price(5.99).image("http://image.com").build();
 			Coupon koozie = Coupon.builder().companyId(companyId).categoryId(Category.ENTERTAINMENT)
 					.title("Collapsible Koozie")
-					.description("The Pepsi Collapsible KOOZIE® Can Kooler folds quickly so you can take "
+					.description("The Pepsi Collapsible KOOZIE Can cooler folds quickly so you can take "
 							+ "it anywhere! Materials: Polyester with Foam Backing. "
-							+ "Approx Size: 3-7/8″w x 5-1/4″h x 1/8″d.")
+							+ "Approx. Size: 3-7/8″w x 5-1/4″h x 1/8″d.")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(35)))
 					.amount(100).price(1.99).image("http://image.com").build();
 			Coupon fridge = Coupon.builder().companyId(companyId).categoryId(Category.ELECTRICITY)
@@ -453,7 +454,7 @@ public class CompanyServiceImpl extends ClientService implements CompanyService 
 							+ "the SING 2 All-Star Snack Pack contains a large popcorn, 2 candies, and 2 "
 							+ "large fountain or ICEE drinks.")
 					.startDate(Date.valueOf(LocalDate.now())).endDate(Date.valueOf(LocalDate.now().plusWeeks(16)))
-					.amount(70).price(17.99).image("http://image.com").build();
+					.amount(70).price(22.99).image("http://image.com").build();
 			Coupon cokePop = Coupon.builder().companyId(companyId).categoryId(Category.FOOD)
 					.title("Coke & Small Popcorn")
 					.description("Get cheap eats at the concession stand at AMC Theaters. "
